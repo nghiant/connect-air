@@ -14,13 +14,13 @@ RUN apk add --no-cache --virtual .buildtools npm make gcc g++ linux-headers udev
     then \
         echo "Installing Edge version" && \
         git clone -b dev --single-branch --depth 1 \
-        https://github.com/Koenkk/zigbee2mqtt.git /app && \
+        https://github.com/nghiant/zigbee2mqtt.git /app && \
         mkdir /app/dist && \
         jq -n --arg commit $(eval cd /app;git rev-parse --short HEAD) '$commit' > /app/dist/.hash ; \
     else \
         echo "Installing Stable version ${BUILD_VERSION%-*}" && \
         curl -sL -o "/app.tar.gz" \
-        "https://github.com/Koenkk/zigbee2mqtt/archive/${BUILD_VERSION%-*}.tar.gz" && \
+        "https://github.com/nghiant/zigbee2mqtt/archive/{BUILD_VERSION%-*}.tar.gz" && \
         tar xzvf "/app.tar.gz"  && rm "/app.tar.gz" && \
         mv -v "zigbee2mqtt-${BUILD_VERSION%-*}" app && \
         mkdir /app/dist && \

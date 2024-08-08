@@ -26,7 +26,7 @@ jobs:
       run: | 
         jq '.version = "${{ steps.version.outputs.addon }}"' zigbee2mqtt/config.json > zigbee2mqtt/config.json.tmp
         mv zigbee2mqtt/config.json.tmp zigbee2mqtt/config.json
-        echo -e "## ${{ steps.version.outputs.addon }}\n- Updated Zigbee2MQTT to version [\`${{ steps.version.outputs.z2m }}\`](https://github.com/Koenkk/zigbee2mqtt/releases/tag/${{ steps.version.outputs.z2m }})\n" | cat - zigbee2mqtt/CHANGELOG.md > zigbee2mqtt/CHANGELOG.md.tmp
+        echo -e "## ${{ steps.version.outputs.addon }}\n- Updated Zigbee2MQTT to version [\`${{ steps.version.outputs.z2m }}\`](https://github.com/nghiant/zigbee2mqtt/releases/tag/${{ steps.version.outputs.z2m }})\n" | cat - zigbee2mqtt/CHANGELOG.md > zigbee2mqtt/CHANGELOG.md.tmp
         mv zigbee2mqtt/CHANGELOG.md.tmp zigbee2mqtt/CHANGELOG.md
     - uses: stefanzweifel/git-auto-commit-action@v5
       with:
@@ -34,5 +34,5 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         tag: "v${{ steps.version.outputs.addon }}"
-        body: "- Updated Zigbee2MQTT to version [`${{ steps.version.outputs.z2m }}`](https://github.com/Koenkk/zigbee2mqtt/releases/tag/${{ steps.version.outputs.z2m }})"
+        body: "- Updated Zigbee2MQTT to version [`${{ steps.version.outputs.z2m }}`](https://github.com/nghiant/zigbee2mqtt/releases/tag/${{ steps.version.outputs.z2m }})"
         token: ${{secrets.GH_TOKEN}}
