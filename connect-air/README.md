@@ -1,4 +1,4 @@
-# SmartEU: ConnectAirMQTT
+# Omaika ConnectAir: ConnectAirMQTT
 
 Cho phép bạn sử dụng thiết bị ConnectAir của mình **mà không cần** cầu nối hoặc cổng của nhà cung cấp.
 
