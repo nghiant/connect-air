@@ -1,6 +1,6 @@
 {
   "name": "ConnectAir",
-  "version": "1.39.1-1",
+  "version": "1.39.2-1",
   "slug": "connect-air",
   "description": "Sử dụng kết nối các thiết bị ConnectAir nhà thông minh của bạn",
   "uart": true,
