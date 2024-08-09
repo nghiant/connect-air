@@ -71,5 +71,5 @@
     },
     "watchdog": "str?"
   },
-  "image": "zigbee2mqtt/zigbee2mqtt-{arch}"
+  "image": "connect-air/connect-air-{arch}"
 }
